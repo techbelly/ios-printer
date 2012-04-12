@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5131E691537863800A4EC8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5131E681537863800A4EC8E /* UIKit.framework */; };
+		B5131E6B1537863800A4EC8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5131E6A1537863800A4EC8E /* Foundation.framework */; };
+		B5131E6D1537863800A4EC8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5131E6C1537863800A4EC8E /* CoreGraphics.framework */; };
+		B5131E731537863800A4EC8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5131E711537863800A4EC8E /* InfoPlist.strings */; };
+		B5131E751537863800A4EC8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131E741537863800A4EC8E /* main.m */; };
+		B5131E791537863800A4EC8E /* TBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131E781537863800A4EC8E /* TBAppDelegate.m */; };
+		B5131E7C1537863800A4EC8E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5131E7A1537863800A4EC8E /* MainStoryboard.storyboard */; };
+		B5131E7F1537863800A4EC8E /* TBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131E7E1537863800A4EC8E /* TBMainViewController.m */; };
+		B5131E821537863800A4EC8E /* TBFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131E811537863800A4EC8E /* TBFlipsideViewController.m */; };
+		B5131E8A1537863800A4EC8E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5131E891537863800A4EC8E /* SenTestingKit.framework */; };
+		B5131E8B1537863800A4EC8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5131E681537863800A4EC8E /* UIKit.framework */; };
+		B5131E8C1537863800A4EC8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5131E6A1537863800A4EC8E /* Foundation.framework */; };
+		B5131E941537863800A4EC8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5131E921537863800A4EC8E /* InfoPlist.strings */; };
+		B5131E971537863800A4EC8E /* GFRPrinterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131E961537863800A4EC8E /* GFRPrinterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5131E8D1537863800A4EC8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5131E5B1537863800A4EC8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5131E631537863800A4EC8E;
+			remoteInfo = GFRPrinter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B5131E641537863800A4EC8E /* GFRPrinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GFRPrinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5131E681537863800A4EC8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B5131E6A1537863800A4EC8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B5131E6C1537863800A4EC8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B5131E701537863800A4EC8E /* GFRPrinter-Info.plist */ = {isa = PBXFileReference; path = "GFRPrinter-Info.plist"; sourceTree = "<group>"; };
+		B5131E721537863800A4EC8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5131E741537863800A4EC8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5131E761537863800A4EC8E /* GFRPrinter-Prefix.pch */ = {isa = PBXFileReference; path = "GFRPrinter-Prefix.pch"; sourceTree = "<group>"; };
+		B5131E771537863800A4EC8E /* TBAppDelegate.h */ = {isa = PBXFileReference; path = TBAppDelegate.h; sourceTree = "<group>"; };
+		B5131E781537863800A4EC8E /* TBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAppDelegate.m; sourceTree = "<group>"; };
+		B5131E7B1537863800A4EC8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		B5131E7D1537863800A4EC8E /* TBMainViewController.h */ = {isa = PBXFileReference; path = TBMainViewController.h; sourceTree = "<group>"; };
+		B5131E7E1537863800A4EC8E /* TBMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBMainViewController.m; sourceTree = "<group>"; };
+		B5131E801537863800A4EC8E /* TBFlipsideViewController.h */ = {isa = PBXFileReference; path = TBFlipsideViewController.h; sourceTree = "<group>"; };
+		B5131E811537863800A4EC8E /* TBFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBFlipsideViewController.m; sourceTree = "<group>"; };
+		B5131E881537863800A4EC8E /* GFRPrinterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GFRPrinterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5131E891537863800A4EC8E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B5131E911537863800A4EC8E /* GFRPrinterTests-Info.plist */ = {isa = PBXFileReference; path = "GFRPrinterTests-Info.plist"; sourceTree = "<group>"; };
+		B5131E931537863800A4EC8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B5131E951537863800A4EC8E /* GFRPrinterTests.h */ = {isa = PBXFileReference; path = GFRPrinterTests.h; sourceTree = "<group>"; };
+		B5131E961537863800A4EC8E /* GFRPrinterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFRPrinterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5131E611537863800A4EC8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5131E691537863800A4EC8E /* UIKit.framework in Frameworks */,
+				B5131E6B1537863800A4EC8E /* Foundation.framework in Frameworks */,
+				B5131E6D1537863800A4EC8E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5131E841537863800A4EC8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5131E8A1537863800A4EC8E /* SenTestingKit.framework in Frameworks */,
+				B5131E8B1537863800A4EC8E /* UIKit.framework in Frameworks */,
+				B5131E8C1537863800A4EC8E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5131E591537863800A4EC8E = {
+			isa = PBXGroup;
+			children = (
+				B5131E6E1537863800A4EC8E /* GFRPrinter */,
+				B5131E8F1537863800A4EC8E /* GFRPrinterTests */,
+				B5131E671537863800A4EC8E /* Frameworks */,
+				B5131E651537863800A4EC8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5131E651537863800A4EC8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5131E641537863800A4EC8E /* GFRPrinter.app */,
+				B5131E881537863800A4EC8E /* GFRPrinterTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5131E671537863800A4EC8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5131E681537863800A4EC8E /* UIKit.framework */,
+				B5131E6A1537863800A4EC8E /* Foundation.framework */,
+				B5131E6C1537863800A4EC8E /* CoreGraphics.framework */,
+				B5131E891537863800A4EC8E /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5131E6E1537863800A4EC8E /* GFRPrinter */ = {
+			isa = PBXGroup;
+			children = (
+				B5131E771537863800A4EC8E /* TBAppDelegate.h */,
+				B5131E781537863800A4EC8E /* TBAppDelegate.m */,
+				B5131E7A1537863800A4EC8E /* MainStoryboard.storyboard */,
+				B5131E7D1537863800A4EC8E /* TBMainViewController.h */,
+				B5131E7E1537863800A4EC8E /* TBMainViewController.m */,
+				B5131E801537863800A4EC8E /* TBFlipsideViewController.h */,
+				B5131E811537863800A4EC8E /* TBFlipsideViewController.m */,
+				B5131E6F1537863800A4EC8E /* Supporting Files */,
+			);
+			path = GFRPrinter;
+			sourceTree = "<group>";
+		};
+		B5131E6F1537863800A4EC8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5131E701537863800A4EC8E /* GFRPrinter-Info.plist */,
+				B5131E711537863800A4EC8E /* InfoPlist.strings */,
+				B5131E741537863800A4EC8E /* main.m */,
+				B5131E761537863800A4EC8E /* GFRPrinter-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5131E8F1537863800A4EC8E /* GFRPrinterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5131E951537863800A4EC8E /* GFRPrinterTests.h */,
+				B5131E961537863800A4EC8E /* GFRPrinterTests.m */,
+				B5131E901537863800A4EC8E /* Supporting Files */,
+			);
+			path = GFRPrinterTests;
+			sourceTree = "<group>";
+		};
+		B5131E901537863800A4EC8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5131E911537863800A4EC8E /* GFRPrinterTests-Info.plist */,
+				B5131E921537863800A4EC8E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5131E631537863800A4EC8E /* GFRPrinter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5131E9A1537863800A4EC8E /* Build configuration list for PBXNativeTarget "GFRPrinter" */;
+			buildPhases = (
+				B5131E601537863800A4EC8E /* Sources */,
+				B5131E611537863800A4EC8E /* Frameworks */,
+				B5131E621537863800A4EC8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GFRPrinter;
+			productName = GFRPrinter;
+			productReference = B5131E641537863800A4EC8E /* GFRPrinter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5131E871537863800A4EC8E /* GFRPrinterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5131E9D1537863800A4EC8E /* Build configuration list for PBXNativeTarget "GFRPrinterTests" */;
+			buildPhases = (
+				B5131E831537863800A4EC8E /* Sources */,
+				B5131E841537863800A4EC8E /* Frameworks */,
+				B5131E851537863800A4EC8E /* Resources */,
+				B5131E861537863800A4EC8E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5131E8E1537863800A4EC8E /* PBXTargetDependency */,
+			);
+			name = GFRPrinterTests;
+			productName = GFRPrinterTests;
+			productReference = B5131E881537863800A4EC8E /* GFRPrinterTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5131E5B1537863800A4EC8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TB;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = B5131E5E1537863800A4EC8E /* Build configuration list for PBXProject "GFRPrinter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B5131E591537863800A4EC8E;
+			productRefGroup = B5131E651537863800A4EC8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5131E631537863800A4EC8E /* GFRPrinter */,
+				B5131E871537863800A4EC8E /* GFRPrinterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5131E621537863800A4EC8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5131E731537863800A4EC8E /* InfoPlist.strings in Resources */,
+				B5131E7C1537863800A4EC8E /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5131E851537863800A4EC8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5131E941537863800A4EC8E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5131E861537863800A4EC8E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5131E601537863800A4EC8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5131E751537863800A4EC8E /* main.m in Sources */,
+				B5131E791537863800A4EC8E /* TBAppDelegate.m in Sources */,
+				B5131E7F1537863800A4EC8E /* TBMainViewController.m in Sources */,
+				B5131E821537863800A4EC8E /* TBFlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5131E831537863800A4EC8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5131E971537863800A4EC8E /* GFRPrinterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5131E8E1537863800A4EC8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5131E631537863800A4EC8E /* GFRPrinter */;
+			targetProxy = B5131E8D1537863800A4EC8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5131E711537863800A4EC8E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5131E721537863800A4EC8E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B5131E7A1537863800A4EC8E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5131E7B1537863800A4EC8E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		B5131E921537863800A4EC8E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5131E931537863800A4EC8E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5131E981537863800A4EC8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B5131E991537863800A4EC8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5131E9B1537863800A4EC8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GFRPrinter/GFRPrinter-Prefix.pch";
+				INFOPLIST_FILE = "GFRPrinter/GFRPrinter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B5131E9C1537863800A4EC8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GFRPrinter/GFRPrinter-Prefix.pch";
+				INFOPLIST_FILE = "GFRPrinter/GFRPrinter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B5131E9E1537863800A4EC8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GFRPrinter.app/GFRPrinter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GFRPrinter/GFRPrinter-Prefix.pch";
+				INFOPLIST_FILE = "GFRPrinterTests/GFRPrinterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B5131E9F1537863800A4EC8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GFRPrinter.app/GFRPrinter";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GFRPrinter/GFRPrinter-Prefix.pch";
+				INFOPLIST_FILE = "GFRPrinterTests/GFRPrinterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5131E5E1537863800A4EC8E /* Build configuration list for PBXProject "GFRPrinter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5131E981537863800A4EC8E /* Debug */,
+				B5131E991537863800A4EC8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5131E9A1537863800A4EC8E /* Build configuration list for PBXNativeTarget "GFRPrinter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5131E9B1537863800A4EC8E /* Debug */,
+				B5131E9C1537863800A4EC8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B5131E9D1537863800A4EC8E /* Build configuration list for PBXNativeTarget "GFRPrinterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5131E9E1537863800A4EC8E /* Debug */,
+				B5131E9F1537863800A4EC8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5131E5B1537863800A4EC8E /* Project object */;
+}
