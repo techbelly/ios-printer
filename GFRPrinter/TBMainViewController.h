@@ -1,8 +1,9 @@
 #import "TBFlipsideViewController.h"
+#import "TBImageFetcher.h"
 
-@interface TBMainViewController : UIViewController <TBFlipsideViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface TBMainViewController : UIViewController <TBFlipsideViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, TBImageFetcherDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *messages;
+
 - (IBAction)linefeed:(id)sender;
 @end

@@ -12,8 +12,6 @@
 
 @synthesize delegate = _delegate;
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,6 +37,8 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - Actions
+
 - (IBAction)randomizeId:(id)sender {
     
     char printerId[17];
@@ -50,8 +50,6 @@
     NSString *str = [NSString stringWithCString:printerId encoding:NSASCIIStringEncoding];
     self.printerId.text = str;
 }
-
-#pragma mark - Actions
 
 - (IBAction)done:(id)sender
 {

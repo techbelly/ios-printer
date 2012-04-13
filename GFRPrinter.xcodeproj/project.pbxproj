@@ -25,6 +25,7 @@
 		B5131EA51537C73E00A4EC8E /* TBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131EA41537C73E00A4EC8E /* TBTableViewCell.m */; };
 		B5131EA81538072E00A4EC8E /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = B5131EA61538072E00A4EC8E /* noise.png */; };
 		B5131EA91538072E00A4EC8E /* noise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5131EA71538072E00A4EC8E /* noise@2x.png */; };
+		B556E3F01538E35700F2FFB4 /* TBImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B556E3EF1538E35700F2FFB4 /* TBImageFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		B5131EA41537C73E00A4EC8E /* TBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTableViewCell.m; sourceTree = "<group>"; };
 		B5131EA61538072E00A4EC8E /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
 		B5131EA71538072E00A4EC8E /* noise@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noise@2x.png"; sourceTree = "<group>"; };
+		B556E3EE1538E35700F2FFB4 /* TBImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBImageFetcher.h; sourceTree = "<group>"; };
+		B556E3EF1538E35700F2FFB4 /* TBImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBImageFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				B5131E6F1537863800A4EC8E /* Supporting Files */,
 				B5131EA015379AE200A4EC8E /* TBDefaults.h */,
 				B5131EA115379AE200A4EC8E /* TBDefaults.m */,
+				B556E3EE1538E35700F2FFB4 /* TBImageFetcher.h */,
+				B556E3EF1538E35700F2FFB4 /* TBImageFetcher.m */,
 			);
 			path = GFRPrinter;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				B5131E821537863800A4EC8E /* TBFlipsideViewController.m in Sources */,
 				B5131EA215379AE200A4EC8E /* TBDefaults.m in Sources */,
 				B5131EA51537C73E00A4EC8E /* TBTableViewCell.m in Sources */,
+				B556E3F01538E35700F2FFB4 /* TBImageFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +462,7 @@
 				B5131E9C1537863800A4EC8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5131E9D1537863800A4EC8E /* Build configuration list for PBXNativeTarget "GFRPrinterTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +471,7 @@
 				B5131E9F1537863800A4EC8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
