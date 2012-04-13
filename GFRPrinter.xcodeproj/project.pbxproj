@@ -21,6 +21,8 @@
 		B5131E8C1537863800A4EC8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5131E6A1537863800A4EC8E /* Foundation.framework */; };
 		B5131E941537863800A4EC8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5131E921537863800A4EC8E /* InfoPlist.strings */; };
 		B5131E971537863800A4EC8E /* GFRPrinterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131E961537863800A4EC8E /* GFRPrinterTests.m */; };
+		B5131EA215379AE200A4EC8E /* TBDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131EA115379AE200A4EC8E /* TBDefaults.m */; };
+		B5131EA51537C73E00A4EC8E /* TBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131EA41537C73E00A4EC8E /* TBTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,23 +40,27 @@
 		B5131E681537863800A4EC8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5131E6A1537863800A4EC8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5131E6C1537863800A4EC8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B5131E701537863800A4EC8E /* GFRPrinter-Info.plist */ = {isa = PBXFileReference; path = "GFRPrinter-Info.plist"; sourceTree = "<group>"; };
+		B5131E701537863800A4EC8E /* GFRPrinter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GFRPrinter-Info.plist"; sourceTree = "<group>"; };
 		B5131E721537863800A4EC8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5131E741537863800A4EC8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B5131E761537863800A4EC8E /* GFRPrinter-Prefix.pch */ = {isa = PBXFileReference; path = "GFRPrinter-Prefix.pch"; sourceTree = "<group>"; };
-		B5131E771537863800A4EC8E /* TBAppDelegate.h */ = {isa = PBXFileReference; path = TBAppDelegate.h; sourceTree = "<group>"; };
+		B5131E761537863800A4EC8E /* GFRPrinter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GFRPrinter-Prefix.pch"; sourceTree = "<group>"; };
+		B5131E771537863800A4EC8E /* TBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBAppDelegate.h; sourceTree = "<group>"; };
 		B5131E781537863800A4EC8E /* TBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAppDelegate.m; sourceTree = "<group>"; };
 		B5131E7B1537863800A4EC8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		B5131E7D1537863800A4EC8E /* TBMainViewController.h */ = {isa = PBXFileReference; path = TBMainViewController.h; sourceTree = "<group>"; };
+		B5131E7D1537863800A4EC8E /* TBMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBMainViewController.h; sourceTree = "<group>"; };
 		B5131E7E1537863800A4EC8E /* TBMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBMainViewController.m; sourceTree = "<group>"; };
-		B5131E801537863800A4EC8E /* TBFlipsideViewController.h */ = {isa = PBXFileReference; path = TBFlipsideViewController.h; sourceTree = "<group>"; };
+		B5131E801537863800A4EC8E /* TBFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBFlipsideViewController.h; sourceTree = "<group>"; };
 		B5131E811537863800A4EC8E /* TBFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBFlipsideViewController.m; sourceTree = "<group>"; };
 		B5131E881537863800A4EC8E /* GFRPrinterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GFRPrinterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5131E891537863800A4EC8E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B5131E911537863800A4EC8E /* GFRPrinterTests-Info.plist */ = {isa = PBXFileReference; path = "GFRPrinterTests-Info.plist"; sourceTree = "<group>"; };
+		B5131E911537863800A4EC8E /* GFRPrinterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GFRPrinterTests-Info.plist"; sourceTree = "<group>"; };
 		B5131E931537863800A4EC8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B5131E951537863800A4EC8E /* GFRPrinterTests.h */ = {isa = PBXFileReference; path = GFRPrinterTests.h; sourceTree = "<group>"; };
+		B5131E951537863800A4EC8E /* GFRPrinterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFRPrinterTests.h; sourceTree = "<group>"; };
 		B5131E961537863800A4EC8E /* GFRPrinterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFRPrinterTests.m; sourceTree = "<group>"; };
+		B5131EA015379AE200A4EC8E /* TBDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBDefaults.h; sourceTree = "<group>"; };
+		B5131EA115379AE200A4EC8E /* TBDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBDefaults.m; sourceTree = "<group>"; };
+		B5131EA31537C73E00A4EC8E /* TBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTableViewCell.h; sourceTree = "<group>"; };
+		B5131EA41537C73E00A4EC8E /* TBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 		B5131E6E1537863800A4EC8E /* GFRPrinter */ = {
 			isa = PBXGroup;
 			children = (
+				B5131EA31537C73E00A4EC8E /* TBTableViewCell.h */,
+				B5131EA41537C73E00A4EC8E /* TBTableViewCell.m */,
 				B5131E771537863800A4EC8E /* TBAppDelegate.h */,
 				B5131E781537863800A4EC8E /* TBAppDelegate.m */,
 				B5131E7A1537863800A4EC8E /* MainStoryboard.storyboard */,
@@ -122,6 +130,8 @@
 				B5131E801537863800A4EC8E /* TBFlipsideViewController.h */,
 				B5131E811537863800A4EC8E /* TBFlipsideViewController.m */,
 				B5131E6F1537863800A4EC8E /* Supporting Files */,
+				B5131EA015379AE200A4EC8E /* TBDefaults.h */,
+				B5131EA115379AE200A4EC8E /* TBDefaults.m */,
 			);
 			path = GFRPrinter;
 			sourceTree = "<group>";
@@ -267,6 +277,8 @@
 				B5131E791537863800A4EC8E /* TBAppDelegate.m in Sources */,
 				B5131E7F1537863800A4EC8E /* TBMainViewController.m in Sources */,
 				B5131E821537863800A4EC8E /* TBFlipsideViewController.m in Sources */,
+				B5131EA215379AE200A4EC8E /* TBDefaults.m in Sources */,
+				B5131EA51537C73E00A4EC8E /* TBTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

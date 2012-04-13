@@ -1,11 +1,3 @@
-//
-//  TBFlipsideViewController.h
-//  GFRPrinter
-//
-//  Created by Ben Griffiths on 12/04/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 @class TBFlipsideViewController;
@@ -19,5 +11,9 @@
 @property (weak, nonatomic) id <TBFlipsideViewControllerDelegate> delegate;
 
 - (IBAction)done:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *printerId;
+@property (weak, nonatomic) IBOutlet UITextField *host;
+@property (weak, nonatomic) IBOutlet UITextField *checkInterval;
 
 @end
