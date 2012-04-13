@@ -35,6 +35,20 @@
     return (300.0/image.size.width)*image.size.height;
 }
 
+- (void)lightpixel:(unsigned char *)data at:(int)start
+{
+    data[start] =   255 -  (arc4random()%20);
+    data[start+1] = 255 -  (arc4random()%20);
+    data[start+2] = 255 -  (arc4random()%20); 
+}
+
+- (void)darkpixel:(unsigned char *)data at:(int)start
+{
+    data[start]   =   (arc4random()%20);
+    data[start+1] =   (arc4random()%20);
+    data[start+2] =   (arc4random()%20); 
+}
+
 - (UIImage *)imageFromData:(NSData *)data
 {
     union {
@@ -47,7 +61,7 @@
     uint16_t width = unpack.d[0];
     uint16_t height = unpack.d[1];
     
-    NSUInteger padding = 10;
+    NSUInteger padding = 40;
     NSUInteger bytesPerPixel = 4;
     NSUInteger bytesPerRow = bytesPerPixel * (width + padding);
     NSUInteger pixelsNeeded = height * bytesPerRow;
@@ -73,9 +87,7 @@
         if ((i % messageBytesPerRow) == 0) {
             for (int p = 0; p < (padding / 2); ++p) {
                 rawBitIdx = p * bytesPerPixel;
-                rawData[rawDataIdx+rawBitIdx] =   255 -  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+1] = 255 -  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+2] = 255 -  (arc4random()%20);
+                [self lightpixel:rawData at:(rawDataIdx+rawBitIdx)];
             }
             paddingTot += (padding /2);
             rawDataIdx += (padding /2) * bytesPerPixel;
@@ -85,13 +97,9 @@
         for (int bit = 0; bit < 8; ++bit) {
             rawBitIdx = bit * bytesPerPixel;
             if ((byte & (1 << (7 - bit))) > 0) {
-                rawData[rawDataIdx+rawBitIdx] =   0 +  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+1] = 0 +  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+2] = 0 +  (arc4random()%20);
+                [self darkpixel:rawData at:(rawDataIdx+rawBitIdx)];
             } else {
-                rawData[rawDataIdx+rawBitIdx] =   255 -  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+1] = 255 -  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+2] = 255 -  (arc4random()%20);
+                [self lightpixel:rawData at:(rawDataIdx+rawBitIdx)];
             }
         }
         
@@ -100,9 +108,7 @@
         if ((i % messageBytesPerRow) == (messageBytesPerRow -1)) {
             for (int p = 0; p < (padding / 2); ++p) {
                 rawBitIdx = p * bytesPerPixel;
-                rawData[rawDataIdx+rawBitIdx] =   255 -  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+1] = 255 -  (arc4random()%20);
-                rawData[rawDataIdx+rawBitIdx+2] = 255 -  (arc4random()%20);
+                [self lightpixel:rawData at:(rawDataIdx+rawBitIdx)];
             }
             paddingTot += (padding /2);
             rawDataIdx += (padding /2) * bytesPerPixel;
@@ -128,7 +134,7 @@
     return cell;
 }
 
-- (void) pollIfConfigured
+- (IBAction) pollIfConfigured
 {
     TBDefaults *defaults = [TBDefaults sharedDefaults];
     if (defaults.printerId && defaults.printerId.length > 0) {
