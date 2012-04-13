@@ -39,100 +39,91 @@
 {
     data[start] =   255 -  (arc4random()%20);
     data[start+1] = 255 -  (arc4random()%20);
-    data[start+2] = 255 -  (arc4random()%20); 
+    data[start+2] = 255 -  (arc4random()%20);
+    data[start+3] = 255;
 }
 
 - (void)darkpixel:(unsigned char *)data at:(int)start
 {
     data[start]   =   (arc4random()%20);
     data[start+1] =   (arc4random()%20);
-    data[start+2] =   (arc4random()%20); 
+    data[start+2] =   (arc4random()%20);
+    data[start+3] = 255;
 }
 
 - (UIImage *)imageFromData:(NSData *)data
 {
     union {
-        char   c [4];
-        uint16_t  d[2];
-    } unpack;
+        char      bytes [4];
+        uint16_t  values[2];
+    } header;
+    
     const char * bytes = [data bytes];
-    memcpy(unpack.c, bytes, sizeof unpack.c);
+    int src_headerSize = sizeof header.bytes;
+    memcpy(header.bytes, bytes, src_headerSize);
+    uint16_t src_width  = header.values[0];
+    uint16_t src_height = header.values[1];
     
-    uint16_t width = unpack.d[0];
-    uint16_t height = unpack.d[1];
+    int src_bitsPerPixel = 8;
     
-    NSUInteger padding = 40;
-    NSUInteger bytesPerPixel = 4;
-    NSUInteger bytesPerRow = bytesPerPixel * (width + padding);
-    NSUInteger pixelsNeeded = (height +padding) * bytesPerRow;
+    int dest_padding = 40;
     
-    unsigned char *rawData = malloc(pixelsNeeded);
-    memset(rawData,255,pixelsNeeded);
+    int dest_width =  (src_width  + dest_padding);
+    int dest_height = (src_height + dest_padding);
     
-    NSUInteger bitsPerComponent = 8;
+    int dest_bytesPerPixel = 4;
+    int dest_bytesPerRow = dest_bytesPerPixel * dest_width;
+    int dest_bytesNeeded = dest_height * dest_bytesPerRow;
+
+    unsigned char *dest = malloc(dest_bytesNeeded);
+
+    // make the background all papery.
+    for(int i = 0; i < dest_bytesNeeded; i += 4) {
+        [self lightpixel:dest at:i];
+    }
+    
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
-    CGContextRef context = CGBitmapContextCreate(rawData, (float) (width + padding), (float) (height + padding), bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+    int dest_bitsPerComponent = 8;
+    CGContextRef context = CGBitmapContextCreate(dest, 
+                                                 (float) dest_width, 
+                                                 (float) dest_height,
+                                                 dest_bitsPerComponent,
+                                                 dest_bytesPerRow,
+                                                 colorSpace,
+                                                 kCGImageAlphaPremultipliedLast);
     
-    int count = [data length];
-    int rawDataIdx; 
     char byte;
-    int rawBitIdx;
-    int paddingTot = 0;
-    int messageBytesPerRow = width / 8;
+    int padded_column, padded_row, src_index, dest_index;
+    
+    // next two lines are the crux of it. src has many pixels per byte,
+    // and dest has many bytes per pixel. Ho hum.
+    int src_rowsize =  (src_width/src_bitsPerPixel);
+    int dest_rowsize = dest_width * dest_bytesPerPixel;
 
-    int vertical_pixels = (width + padding) * (padding/2);
-    for (int i = 0; i < vertical_pixels; i ++) {
-        rawDataIdx = i*bytesPerPixel;
-        [self lightpixel:rawData at:rawDataIdx];
-    }
+    int dest_src_offset = dest_padding/2;
     
-    paddingTot = vertical_pixels;
-    
-    for (int i = 0; i < count-4; ++i) {
-        rawDataIdx = i*bytesPerPixel*bitsPerComponent + (paddingTot * bytesPerPixel);
-        
-        if ((i % messageBytesPerRow) == 0) {
-            for (int p = 0; p < (padding / 2); ++p) {
-                rawBitIdx = p * bytesPerPixel;
-                [self lightpixel:rawData at:(rawDataIdx+rawBitIdx)];
-            }
-            paddingTot += (padding /2);
-            rawDataIdx += (padding /2) * bytesPerPixel;
-        }
-        
-        byte = bytes[i+4];
-        for (int bit = 0; bit < 8; ++bit) {
-            rawBitIdx = bit * bytesPerPixel;
+    for (int row = 0; row < src_height; row ++) {
+        for (int column = 0; column < src_width; column ++) {
+
+            src_index = (column/src_bitsPerPixel) + (row * src_rowsize) + src_headerSize;
+            byte = bytes[src_index];
+
+            padded_column = column + dest_src_offset;
+            padded_row    = row    + dest_src_offset;
+            
+            dest_index = padded_column * dest_bytesPerPixel + padded_row * dest_rowsize;
+                        
+            int bit = (column % 8);
             if ((byte & (1 << (7 - bit))) > 0) {
-                [self darkpixel:rawData at:(rawDataIdx+rawBitIdx)];
-            } else {
-                [self lightpixel:rawData at:(rawDataIdx+rawBitIdx)];
-            }
+                [self darkpixel:dest at:dest_index];
+            } 
         }
-        
-        rawDataIdx = rawDataIdx + bytesPerPixel*bitsPerComponent;
-        
-        if ((i % messageBytesPerRow) == (messageBytesPerRow -1)) {
-            for (int p = 0; p < (padding / 2); ++p) {
-                rawBitIdx = p * bytesPerPixel;
-                [self lightpixel:rawData at:(rawDataIdx+rawBitIdx)];
-            }
-            paddingTot += (padding /2);
-            rawDataIdx += (padding /2) * bytesPerPixel;
-        }
-        
-    }
-    
-    int start = (width + padding) * (height + padding/2);
-    for (int i = start; i < (start+vertical_pixels); ++i) {
-        rawDataIdx = i*bytesPerPixel;
-        [self lightpixel:rawData at:rawDataIdx];
     }
     
     CGImageRef cgimage = CGBitmapContextCreateImage(context); 
     UIImage *image =  [UIImage imageWithCGImage:cgimage scale:1.0 orientation:UIImageOrientationDown];
-    free(rawData);
+    free(dest);
     return image;
 }
 
