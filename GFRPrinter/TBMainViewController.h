@@ -4,4 +4,5 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *messages;
+- (IBAction)linefeed:(id)sender;
 @end

@@ -64,7 +64,7 @@
     NSUInteger padding = 40;
     NSUInteger bytesPerPixel = 4;
     NSUInteger bytesPerRow = bytesPerPixel * (width + padding);
-    NSUInteger pixelsNeeded = height * bytesPerRow;
+    NSUInteger pixelsNeeded = (height +padding) * bytesPerRow;
     
     unsigned char *rawData = malloc(pixelsNeeded);
     memset(rawData,255,pixelsNeeded);
@@ -72,7 +72,7 @@
     NSUInteger bitsPerComponent = 8;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
-    CGContextRef context = CGBitmapContextCreate(rawData, (float) (width + padding), (float) height, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGContextRef context = CGBitmapContextCreate(rawData, (float) (width + padding), (float) (height + padding), bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
     
     int count = [data length];
     int rawDataIdx; 
@@ -81,6 +81,14 @@
     int paddingTot = 0;
     int messageBytesPerRow = width / 8;
 
+    int vertical_pixels = (width + padding) * (padding/2);
+    for (int i = 0; i < vertical_pixels; i ++) {
+        rawDataIdx = i*bytesPerPixel;
+        [self lightpixel:rawData at:rawDataIdx];
+    }
+    
+    paddingTot = vertical_pixels;
+    
     for (int i = 0; i < count-4; ++i) {
         rawDataIdx = i*bytesPerPixel*bitsPerComponent + (paddingTot * bytesPerPixel);
         
@@ -114,6 +122,12 @@
             rawDataIdx += (padding /2) * bytesPerPixel;
         }
         
+    }
+    
+    int start = (width + padding) * (height + padding/2);
+    for (int i = start; i < (start+vertical_pixels); ++i) {
+        rawDataIdx = i*bytesPerPixel;
+        [self lightpixel:rawData at:rawDataIdx];
     }
     
     CGImageRef cgimage = CGBitmapContextCreateImage(context); 
@@ -186,7 +200,8 @@
     if ([self.download length] > 0) {
         UIImage *image = [self imageFromData:self.download];
         [self.messages insertObject:image atIndex:0];
-        [self.tableView reloadData];
+        NSArray *array = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [self.tableView insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];       
     }
     self.loading = NO;
 }
@@ -223,4 +238,9 @@
     }
 }
 
+- (IBAction)linefeed:(id)sender {
+    [self.messages insertObject:[UIImage imageNamed:@"noise"] atIndex:0];
+    NSArray *array = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [self.tableView insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];       
+}
 @end

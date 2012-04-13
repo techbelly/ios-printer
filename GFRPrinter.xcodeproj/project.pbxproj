@@ -23,6 +23,8 @@
 		B5131E971537863800A4EC8E /* GFRPrinterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131E961537863800A4EC8E /* GFRPrinterTests.m */; };
 		B5131EA215379AE200A4EC8E /* TBDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131EA115379AE200A4EC8E /* TBDefaults.m */; };
 		B5131EA51537C73E00A4EC8E /* TBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5131EA41537C73E00A4EC8E /* TBTableViewCell.m */; };
+		B5131EA81538072E00A4EC8E /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = B5131EA61538072E00A4EC8E /* noise.png */; };
+		B5131EA91538072E00A4EC8E /* noise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5131EA71538072E00A4EC8E /* noise@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		B5131EA115379AE200A4EC8E /* TBDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBDefaults.m; sourceTree = "<group>"; };
 		B5131EA31537C73E00A4EC8E /* TBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTableViewCell.h; sourceTree = "<group>"; };
 		B5131EA41537C73E00A4EC8E /* TBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTableViewCell.m; sourceTree = "<group>"; };
+		B5131EA61538072E00A4EC8E /* noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise.png; sourceTree = "<group>"; };
+		B5131EA71538072E00A4EC8E /* noise@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noise@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 		B5131E6F1537863800A4EC8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5131EA61538072E00A4EC8E /* noise.png */,
+				B5131EA71538072E00A4EC8E /* noise@2x.png */,
 				B5131E701537863800A4EC8E /* GFRPrinter-Info.plist */,
 				B5131E711537863800A4EC8E /* InfoPlist.strings */,
 				B5131E741537863800A4EC8E /* main.m */,
@@ -239,6 +245,8 @@
 			files = (
 				B5131E731537863800A4EC8E /* InfoPlist.strings in Resources */,
 				B5131E7C1537863800A4EC8E /* MainStoryboard.storyboard in Resources */,
+				B5131EA81538072E00A4EC8E /* noise.png in Resources */,
+				B5131EA91538072E00A4EC8E /* noise@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
