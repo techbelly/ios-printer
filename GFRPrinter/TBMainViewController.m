@@ -47,8 +47,9 @@
     uint16_t width = unpack.d[0];
     uint16_t height = unpack.d[1];
     
+    NSUInteger padding = 10;
     NSUInteger bytesPerPixel = 4;
-    NSUInteger bytesPerRow = bytesPerPixel * width;
+    NSUInteger bytesPerRow = bytesPerPixel * (width + padding);
     NSUInteger pixelsNeeded = height * bytesPerRow;
     
     unsigned char *rawData = malloc(pixelsNeeded);
@@ -57,25 +58,56 @@
     NSUInteger bitsPerComponent = 8;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
-    CGContextRef context = CGBitmapContextCreate(rawData, (float) width, (float) height, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+    CGContextRef context = CGBitmapContextCreate(rawData, (float) (width + padding), (float) height, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
     
     int count = [data length];
     int rawDataIdx; 
     char byte;
     int rawBitIdx;
-    
+    int paddingTot = 0;
+    int messageBytesPerRow = width / 8;
+
     for (int i = 0; i < count-4; ++i) {
-        rawDataIdx = i*bytesPerPixel*bitsPerComponent;
+        rawDataIdx = i*bytesPerPixel*bitsPerComponent + (paddingTot * bytesPerPixel);
+        
+        if ((i % messageBytesPerRow) == 0) {
+            for (int p = 0; p < (padding / 2); ++p) {
+                rawBitIdx = p * bytesPerPixel;
+                rawData[rawDataIdx+rawBitIdx] =   255 -  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+1] = 255 -  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+2] = 255 -  (arc4random()%20);
+            }
+            paddingTot += (padding /2);
+            rawDataIdx += (padding /2) * bytesPerPixel;
+        }
+        
         byte = bytes[i+4];
         for (int bit = 0; bit < 8; ++bit) {
             rawBitIdx = bit * bytesPerPixel;
             if ((byte & (1 << (7 - bit))) > 0) {
-                rawData[rawDataIdx+rawBitIdx] =   0;
-                rawData[rawDataIdx+rawBitIdx+1] = 0;
-                rawData[rawDataIdx+rawBitIdx+2] = 0;
-                rawData[rawDataIdx+rawBitIdx+3] = 255;
+                rawData[rawDataIdx+rawBitIdx] =   0 +  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+1] = 0 +  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+2] = 0 +  (arc4random()%20);
+            } else {
+                rawData[rawDataIdx+rawBitIdx] =   255 -  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+1] = 255 -  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+2] = 255 -  (arc4random()%20);
             }
         }
+        
+        rawDataIdx = rawDataIdx + bytesPerPixel*bitsPerComponent;
+        
+        if ((i % messageBytesPerRow) == (messageBytesPerRow -1)) {
+            for (int p = 0; p < (padding / 2); ++p) {
+                rawBitIdx = p * bytesPerPixel;
+                rawData[rawDataIdx+rawBitIdx] =   255 -  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+1] = 255 -  (arc4random()%20);
+                rawData[rawDataIdx+rawBitIdx+2] = 255 -  (arc4random()%20);
+            }
+            paddingTot += (padding /2);
+            rawDataIdx += (padding /2) * bytesPerPixel;
+        }
+        
     }
     
     CGImageRef cgimage = CGBitmapContextCreateImage(context); 
