@@ -15,6 +15,7 @@
 @implementation TBMainViewController
 
 @synthesize tableView = _tableView;
+@synthesize greenLED = _greenLED;
 @synthesize messages = _messages;
 @synthesize poller = _poller;
 @synthesize alert = _alert;
@@ -27,12 +28,19 @@
     [super viewDidLoad];
     self.messages = [NSMutableArray array];
     self.fetchers = [NSMutableSet set];
+    self.greenLED.animationImages = [NSArray arrayWithObjects:
+                                     [UIImage imageNamed:@"green-on-128.png"],
+                                     [UIImage imageNamed:@"green-off-128.png"],
+                                     nil];
+    self.greenLED.animationDuration = 0.8;
+                                     
     [self startPolling];
 }
 
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setGreenLED:nil];
     [super viewDidUnload];
 }
 
@@ -78,9 +86,15 @@
 
 #pragma mark - TBImageFetcherDelegate
 
+- (void)loadingStopped:(TBImageFetcher *)fetcher
+{
+    [self.greenLED stopAnimating];
+    [self.fetchers removeObject:fetcher];
+}
+
 - (void)imageFetcher:(TBImageFetcher *)fetcher didSucceedWithImage:(UIImage *)image
 {
-    [self.fetchers removeObject:fetcher];
+    [self loadingStopped:fetcher];
     [self.messages insertObject:image atIndex:0];
     NSArray *array = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
     [self.tableView insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationTop];
@@ -88,12 +102,18 @@
 
 - (void)imageFetcher:(TBImageFetcher *)fetcher didFailWithError:(NSError *)error
 {
-    [self.fetchers removeObject:fetcher];
+    [self loadingStopped:fetcher];
+
     NSString *message = [NSString stringWithFormat:@"Connection failed! Error - %@ %@",
                          [error localizedDescription],
                          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]];
     self.alert = [[UIAlertView alloc] initWithTitle:@"Connection Failed" message:message delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     [self.alert show];
+}
+
+- (void)imageFetcherDidSucceed:(TBImageFetcher *)fetcher
+{
+    [self loadingStopped:fetcher];
 }
 
 #pragma mark - TBFlipsideViewControllerDelegate
@@ -129,6 +149,7 @@
     TBDefaults *defaults = [TBDefaults sharedDefaults];
     TBImageFetcher *fetcher = [[TBImageFetcher alloc] init];
     fetcher.delegate = self;
+    [self.greenLED startAnimating];
     [fetcher fetchImageForPrinter:defaults.printerId fromHost:defaults.host];
     [self.fetchers addObject:fetcher];
 }

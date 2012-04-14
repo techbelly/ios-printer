@@ -17,12 +17,11 @@
     data[start+3] = 255;
 }
 
-- (void)darkpixel:(unsigned char *)data at:(int)start
+- (void)invert:(unsigned char *)data at:(int)start
 {
-    data[start]   =   (arc4random()%20);
-    data[start+1] =   (arc4random()%20);
-    data[start+2] =   (arc4random()%20);
-    data[start+3] = 255;
+    data[start]   =   255 - data[start];
+    data[start+1] =   255 - data[start+1];
+    data[start+2] =   255 - data[start+2];
 }
 
 
@@ -89,7 +88,7 @@
             int bit = (pixelsAcross % 8);
             if ((byte & (1 << (7 - bit))) > 0) {            
                 dest_bytesAcross = (pixelsAcross + dest_leftPadding) * dest_bytesPerPixel;
-                [self darkpixel:dest at:dest_bytesDown + dest_bytesAcross];
+                [self invert:dest at:dest_bytesDown + dest_bytesAcross];
             } 
         }
     }
@@ -153,6 +152,8 @@
     if ([self.download length] > 0) {
         UIImage *image = [self imageFromData:self.download];
         [self.delegate imageFetcher:self didSucceedWithImage:image];
+    } else {
+        [self.delegate imageFetcherDidSucceed:self ];
     }
 }
 

@@ -12,4 +12,5 @@
 @protocol TBImageFetcherDelegate
 - (void)imageFetcher:(TBImageFetcher *)fetcher didSucceedWithImage:(UIImage *)image;
 - (void)imageFetcher:(TBImageFetcher *)fetcher didFailWithError:(NSError *)error;
+- (void)imageFetcherDidSucceed:(TBImageFetcher *)fetcher;
 @end

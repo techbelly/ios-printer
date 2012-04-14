@@ -26,6 +26,11 @@
 		B5131EA81538072E00A4EC8E /* noise.png in Resources */ = {isa = PBXBuildFile; fileRef = B5131EA61538072E00A4EC8E /* noise.png */; };
 		B5131EA91538072E00A4EC8E /* noise@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5131EA71538072E00A4EC8E /* noise@2x.png */; };
 		B556E3F01538E35700F2FFB4 /* TBImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B556E3EF1538E35700F2FFB4 /* TBImageFetcher.m */; };
+		B556E3FA1539192500F2FFB4 /* green-off-128.png in Resources */ = {isa = PBXBuildFile; fileRef = B556E3F61539192500F2FFB4 /* green-off-128.png */; };
+		B556E3FB1539192500F2FFB4 /* green-on-128.png in Resources */ = {isa = PBXBuildFile; fileRef = B556E3F71539192500F2FFB4 /* green-on-128.png */; };
+		B556E3FC1539192500F2FFB4 /* red-off-128.png in Resources */ = {isa = PBXBuildFile; fileRef = B556E3F81539192500F2FFB4 /* red-off-128.png */; };
+		B556E3FD1539192500F2FFB4 /* red-on-128.png in Resources */ = {isa = PBXBuildFile; fileRef = B556E3F91539192500F2FFB4 /* red-on-128.png */; };
+		B556E4001539210A00F2FFB4 /* printer.png in Resources */ = {isa = PBXBuildFile; fileRef = B556E3FF1539210A00F2FFB4 /* printer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		B5131EA71538072E00A4EC8E /* noise@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noise@2x.png"; sourceTree = "<group>"; };
 		B556E3EE1538E35700F2FFB4 /* TBImageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBImageFetcher.h; sourceTree = "<group>"; };
 		B556E3EF1538E35700F2FFB4 /* TBImageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBImageFetcher.m; sourceTree = "<group>"; };
+		B556E3F61539192500F2FFB4 /* green-off-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-off-128.png"; sourceTree = "<group>"; };
+		B556E3F71539192500F2FFB4 /* green-on-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-on-128.png"; sourceTree = "<group>"; };
+		B556E3F81539192500F2FFB4 /* red-off-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-off-128.png"; sourceTree = "<group>"; };
+		B556E3F91539192500F2FFB4 /* red-on-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-on-128.png"; sourceTree = "<group>"; };
+		B556E3FF1539210A00F2FFB4 /* printer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +158,11 @@
 		B5131E6F1537863800A4EC8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B556E3FF1539210A00F2FFB4 /* printer.png */,
+				B556E3F61539192500F2FFB4 /* green-off-128.png */,
+				B556E3F71539192500F2FFB4 /* green-on-128.png */,
+				B556E3F81539192500F2FFB4 /* red-off-128.png */,
+				B556E3F91539192500F2FFB4 /* red-on-128.png */,
 				B5131EA61538072E00A4EC8E /* noise.png */,
 				B5131EA71538072E00A4EC8E /* noise@2x.png */,
 				B5131E701537863800A4EC8E /* GFRPrinter-Info.plist */,
@@ -252,6 +267,11 @@
 				B5131E7C1537863800A4EC8E /* MainStoryboard.storyboard in Resources */,
 				B5131EA81538072E00A4EC8E /* noise.png in Resources */,
 				B5131EA91538072E00A4EC8E /* noise@2x.png in Resources */,
+				B556E3FA1539192500F2FFB4 /* green-off-128.png in Resources */,
+				B556E3FB1539192500F2FFB4 /* green-on-128.png in Resources */,
+				B556E3FC1539192500F2FFB4 /* red-off-128.png in Resources */,
+				B556E3FD1539192500F2FFB4 /* red-on-128.png in Resources */,
+				B556E4001539210A00F2FFB4 /* printer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
